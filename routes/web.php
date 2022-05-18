@@ -15,6 +15,10 @@
 //     return view('welcome');
 // });
 
+use App\Http\Controllers\TopicController;
+
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::resource('topic','TopicController');
