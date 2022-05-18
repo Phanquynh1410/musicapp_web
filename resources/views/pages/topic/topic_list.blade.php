@@ -1,56 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <nav class="navbar navbar-expand-md ">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                   
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left:720px">
-                   
-                    <ul class="navbar-nav mr-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item" >
-                                <a style="color: #ffffff;" id="navbarDropdown" class="nav-link " href="#" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-                            </li>
-                            <li>
-                            <div style="text-align: right; margin-top: 5px; margin-left: 20px;">
-                                   <button class="btn btn-danger"> <a style="color: #ffffff;" class="" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }} 
-                                    </a></button>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    <!-- End Navbar -->
    
-    <div class="container-fluid py-4">
+    <div class="container-fluid py-4 ">
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
@@ -93,7 +45,7 @@
                         <!-- </div> -->
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <a href=""><span class="badge badge-sm bg-gradient-primary" style="margin-right: 10px;">Edit</span></a>
+                        <a href="{{ route('topic.edit', $value->id_chude) }}"><span class="badge badge-sm bg-gradient-primary" style="margin-right: 10px;">Edit</span></a>
                         <a href=""><span class="badge badge-sm bg-gradient-danger ">Delerte</span></a>
                       </td>
                     </tr>
@@ -106,38 +58,7 @@
           </div>
         </div>
       </div>
-      <footer class="footer pt-3  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                for a better web.
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+    
     </div>
 
   </main>

@@ -8,4 +8,6 @@ class Topic extends Model
 {
     protected $table = 'chude';
     protected $fillable = ['*'];
+
+    protected $primaryKey = 'id_chude';
 }
