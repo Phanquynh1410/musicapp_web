@@ -49,8 +49,8 @@
     <hr class="horizontal dark mt-0">
     <div class=" " id="sidenav-collapse-main">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="../pages/dashboard.html">
+        <li class="nav-item" id="home">
+          <a class="nav-link " href="{{route('home')}}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
             </div>
@@ -60,7 +60,7 @@
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Manager</h6>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="topic">
           <a class="nav-link " href="{{route('topic.index')}}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
@@ -68,7 +68,7 @@
             <span class="nav-link-text ms-1">Topic</span>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="category">
           <a class="nav-link " href="../pages/billing.html">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
@@ -140,4 +140,14 @@
         </main>
     </div>
 </body>
+<script>
+  var home = document.getElementById("home");
+  var topic = document.getElementById("topic");
+
+  home.onclick = function () {
+    home.style.background = "#E6E6FA";
+    topic.style.background = "#ffffff";
+  };
+</script>
 </html>
+

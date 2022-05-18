@@ -633,5 +633,14 @@
   <script src="../assets/js/argon-dashboard.min.js?v=2.0.2"></script>
 </body>
 
+
+<script>
+  var home = document.getElementById("home");
+  var topic = document.getElementById("topic");
+
+    home.style.background = "#E6E6FA";
+    topic.style.background = "#ffffff";
+</script>
+
 </html>
 @endsection
