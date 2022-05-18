@@ -56,7 +56,7 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Topic List</h6>
-              <a class="badge badge-sm bg-gradient-success" style="margin-right: 10px; float: right; word-wrap: normal;">Add Topic</a>
+              <a href=""><span class="badge badge-sm bg-gradient-success" style="margin-right: 10px; float: right; word-wrap: normal;">Add Topic</span></a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -64,16 +64,16 @@
 
                   <thead>                 
                     <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Topic name</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Topic Image</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Topic Name</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                     </tr>
                   </thead>
                   <tbody>
                   @foreach($topic as $key => $value)
                     <tr>
-                    <td>
+                      <td>
                         <div class="d-flex px-2 py-1">
                           <div class="d-flex flex-column justify-content-center">
                             <p class="text-secondary mb-0" style="margin-left: 10px;">{{ $key+1 }}</p>
@@ -81,21 +81,20 @@
                         </div>
                       </td>
                       <td>
-                        <div class="d-flex px-2 py-1">
+                        <div class="d-flex px-2 py-1" >
                           <div>
-                            <img src="{{ $value->hinh_chude }}" class="avatar avatar-sm me-3" alt="user1">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm"></h6>
-                            <p class="text-secondary mb-0">{{ $value->ten_chude }}</p>
+                            <img src="{{ $value->hinh_chude }}" class="" alt="user1" style="width: 80px; height: 80px;" >
                           </div>
                         </div>
                       </td>
-                      <td></td>
-                      <td></td>
+                      <td class=" text-center">
+                        <!-- <div class="d-flex px-2 py-1" > -->
+                            <p class="text-secondary mb-0 text-center" >{{ $value->ten_chude }}</p>
+                        <!-- </div> -->
+                      </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-primary" style="margin-right: 10px;">Edit</span>
-                        <span class="badge badge-sm bg-gradient-danger">Delerte</span>
+                        <a href=""><span class="badge badge-sm bg-gradient-primary" style="margin-right: 10px;">Edit</span></a>
+                        <a href=""><span class="badge badge-sm bg-gradient-danger ">Delerte</span></a>
                       </td>
                     </tr>
                     @endforeach
