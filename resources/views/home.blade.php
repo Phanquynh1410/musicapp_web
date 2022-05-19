@@ -2,53 +2,7 @@
 
 @section('content')
 
-    <nav class="navbar navbar-expand-md ">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                   
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left:720px">
-                   
-                    <ul class="navbar-nav mr-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item" >
-                                <a style="color: #ffffff;" id="navbarDropdown" class="nav-link " href="#" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-                            </li>
-                            <li>
-                            <div style="text-align: right; margin-top: 5px; margin-left: 20px;">
-                                   <button class="btn btn-danger"> <a style="color: #ffffff;" class="" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }} 
-                                    </a></button>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    <!-- End Navbar -->
+    
     <div class="container-fluid py-4">
       <div class="row">
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
@@ -636,10 +590,8 @@
 
 <script>
   var home = document.getElementById("home");
-  var topic = document.getElementById("topic");
 
     home.style.background = "#E6E6FA";
-    topic.style.background = "#ffffff";
 </script>
 
 </html>

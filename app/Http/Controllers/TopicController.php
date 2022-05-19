@@ -13,16 +13,16 @@ class TopicController extends Controller
         return view('pages.topic.topic_list',compact("topic"));
     }
 
-    public function edit(Topic $topic)
-    {
-        return view('pages.topic.topic_edit',compact("topic"));
-    }
+    // public function edit(Topic $topic)
+    // {
+    //     return view('pages.topic.topic_edit',compact("topic"));
+    // }
 
-    public function destroy($id)
-    {
-        $topic = Topic::findOrFail($id);
-        $topic->delete();
+    // public function destroy($id)
+    // {
+    //     $topic = Topic::findOrFail($id);
+    //     $topic->delete();
 
-        return redirect('/index')->with('success', 'Show is successfully deleted');
-    }
+    //     return redirect('/index')->with('success', 'Show is successfully deleted');
+    // }
 }

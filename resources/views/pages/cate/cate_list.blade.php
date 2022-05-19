@@ -17,13 +17,14 @@
                   <thead>                 
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Topic Image</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Category Image</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Category Name</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Topic Name</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($topic as $key => $value)
+                  @foreach($cate as $key => $value)
                     <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
@@ -35,13 +36,18 @@
                       <td>
                         <div class="d-flex px-2 py-1" >
                           <div>
-                            <img src="{{ $value->hinh_chude }}" class="" alt="user1" style="width: 80px; height: 80px;" >
+                            <img src="{{ $value->hinh_theloai}}" class="" alt="user1" style="width: 80px; height: 80px;" >
                           </div>
                         </div>
                       </td>
                       <td class=" text-center">
                         <!-- <div class="d-flex px-2 py-1" > -->
-                            <p class="text-secondary mb-0 text-center" >{{ $value->ten_chude }}</p>
+                            <p class="text-secondary mb-0 text-center" >{{ $value->ten_theloai }}</p>
+                        <!-- </div> -->
+                      </td>
+                      <td class=" text-center">
+                        <!-- <div class="d-flex px-2 py-1" > -->
+                            <p class="text-secondary mb-0 text-center" >{{ $value->topic->ten_chude }}</p>
                         <!-- </div> -->
                       </td>
                       <td class="align-middle text-center text-sm">
@@ -241,10 +247,11 @@
 
 
 <script>
- 
-  var topic = document.getElementById("topic");
+  var cate = document.getElementById("cate");
   
-  topic.style.background = "#E6E6FA";
+  home.style.background = "#ffffff";
+  topic.style.background = "#ffffff";
+  cate.style.background = "#E6E6FA";
 </script>
 
 </html>
