@@ -16,32 +16,28 @@
 
                   <thead>                 
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Topic Image</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Topic Name</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
+                      <th class="text-uppercase text-center text-secondary font-weight-bolder opacity-7">ID</th>
+                      <th class="text-uppercase text-center text-secondary font-weight-bolder opacity-7" >Topic Image</th>
+                      <th class=" text-uppercase text-center text-secondary font-weight-bolder opacity-7" >Topic Name</th>
+                      <th class="text-center text-center text-uppercase text-secondary font-weight-bolder opacity-7"></th>
+                      <th class="text-center text-center text-uppercase text-secondary font-weight-bolder opacity-7"></th>
                     </tr>
                   </thead>
                   <tbody>
                   @foreach($topic as $key => $value)
                     <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <p class="text-secondary mb-0" style="margin-left: 10px;">{{ $key+1 }}</p>
-                          </div>
-                        </div>
+                      <td class="text-center">
+                      {{ $key+1 }}
                       </td>
-                      <td>
-                        <div class="d-flex px-2 py-1" >
-                          <div>
-                            <img src="{{ $value->hinh_chude }}" class="" alt="user1" style="width: 80px; height: 80px;" >
-                          </div>
-                        </div>
+                      <td class="text-center">
+                            <img src="{{ $value->hinh_chude }}" class="" alt="user1" style="width: 100px; height: 100px;" >
+                      </td>
+                      <td class="text-center">
+                      {{  $value->ten_chude }}
                       </td>
                       <td class=" text-center">
                         <!-- <div class="d-flex px-2 py-1" > -->
-                            <p class="text-secondary mb-0 text-center" >{{ $value->ten_chude }}</p>
+                            <p class="text-secondary mb-0 text-center" ></p>
                         <!-- </div> -->
                       </td>
                       <td class="align-middle text-center text-sm">

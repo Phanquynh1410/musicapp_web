@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Model;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Album extends Model
+{
+    
+    protected $table = 'album';
+    protected $fillable = ['*'];
+
+    protected $primaryKey = 'id_album';
+}

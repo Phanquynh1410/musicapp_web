@@ -17,33 +17,37 @@
                   <thead>                 
                     <tr>
                       <th class="text-uppercase text-center text-secondary font-weight-bolder opacity-7">ID</th>
-                      <th class="text-uppercase text-center text-secondary font-weight-bolder opacity-7" >Category Image</th>
-                      <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-7">Category Name</th>
-                      <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-7">Topic Name</th>
+                      <th class="text-uppercase text-center text-secondary font-weight-bolder opacity-7" >Album Image </th>
+                      <th class="text-uppercase text-center text-secondary font-weight-bolder opacity-7" >Album Name </th>
+                      <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-7">Singer</th>
+                      <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-7"></th>
                       <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-7"></th>
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($cate as $key => $value)
+                  @foreach($album as $key => $value)
                     <tr>
                       <td class="text-center">
-                        {{ $key+1 }}
+                       <p class="text-secondary mb-0" >{{ $key+1 }}</p>
                       </td>
                       <td class="text-center">
-                       <img src="{{ $value->hinh_theloai}}" class="" alt="user1" style="width: 100px; height: 100px;" >
+                            <img src="{{ $value->hinh_album }}" class="" alt="user1" style="width: 100px; height: 100px;" >
                       </td>
                       <td class=" text-center">
-                        <!-- <div class="d-flex px-2 py-1" > -->
-                            <p class="text-secondary mb-0 text-center" >{{ $value->ten_theloai }}</p>
-                        <!-- </div> -->
+                            <p class="text-secondary mb-0 text-center" >{{  $value->ten_album }}</p>
                       </td>
                       <td class=" text-center">
-                        <!-- <div class="d-flex px-2 py-1" > -->
-                            <p class="text-secondary mb-0 text-center" >{{ $value->topic->ten_chude }}</p>
-                        <!-- </div> -->
+                            <p class="text-secondary mb-0 text-center" >{{  $value->ten_casi }}</p>
+                      </td>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-secondary mb-0" style="margin-left: 10px;"></p>
+                          </div>
+                        </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <a href="{{ route('topic.edit', $value->id_chude) }}"><span class="badge badge-sm bg-gradient-primary" style="margin-right: 10px;">Edit</span></a>
+                        <a href=""><span class="badge badge-sm bg-gradient-primary" style="margin-right: 10px;">Edit</span></a>
                         <a href=""><span class="badge badge-sm bg-gradient-danger ">Delete</span></a>
                       </td>
                     </tr>
@@ -239,11 +243,10 @@
 
 
 <script>
-  var cate = document.getElementById("cate");
+ 
+  var album = document.getElementById("album");
   
-  home.style.background = "#ffffff";
-  topic.style.background = "#ffffff";
-  cate.style.background = "#E6E6FA";
+  album.style.background = "#E6E6FA";
 </script>
 
 </html>
