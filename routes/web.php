@@ -24,3 +24,4 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::resource('topic','TopicController');
 Route::resource('cate','CategoryController');
 Route::resource('album','AlbumController');
+Route::resource('playlist','PlaylistController');
