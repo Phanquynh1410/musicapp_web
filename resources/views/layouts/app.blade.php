@@ -95,8 +95,8 @@
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Song Manager</h6>
         </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/profile.html">
+        <li class="nav-item" id="adver">
+          <a class="nav-link " href="{{route('adver.index')}}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-notification-70 text-primary text-sm opacity-10"></i>
             </div>
@@ -115,7 +115,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account Manager</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="../pages/sign-in.html">
+          <a class="nav-link " href="{{route('register')}}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
             </div>
@@ -214,6 +214,7 @@
     cate.style.background = "#ffffff";
     album.style.background = "#ffffff";
     playlist.style.background = "#ffffff";
+    adver.style.background = "#ffffff";
   };
 
   album.onclick = function () {
@@ -222,6 +223,7 @@
     cate.style.background = "#ffffff";
     home.style.background = "#ffffff";
     playlist.style.background = "#ffffff";
+    adver.style.background = "#ffffff";
   };
 
   playlist.onclick = function () {
@@ -230,8 +232,17 @@
     cate.style.background = "#ffffff";
     home.style.background = "#ffffff";
     album.style.background = "#ffffff";
+    adver.style.background = "#ffffff";
   };
   
+  adver.onclick = function () {
+    playlist.style.background = "#E6E6FA";
+    topic.style.background = "#ffffff";
+    cate.style.background = "#ffffff";
+    home.style.background = "#ffffff";
+    album.style.background = "#ffffff";
+    playlist.style.background = "#ffffff";
+  };
 </script>
 </html>
 
