@@ -26,3 +26,4 @@ Route::resource('cate','CategoryController');
 Route::resource('album','AlbumController');
 Route::resource('playlist','PlaylistController');
 Route::resource('adver','AdverController');
+Route::resource('song','SongController');

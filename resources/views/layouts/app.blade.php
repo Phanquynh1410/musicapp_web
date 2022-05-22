@@ -103,8 +103,8 @@
             <span class="nav-link-text ms-1">Advertisement</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/profile.html">
+        <li class="nav-item" id="song">
+          <a class="nav-link " href="{{route('song.index')}}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-headphones text-dark text-sm opacity-10"></i>
             </div>
@@ -215,6 +215,7 @@
     album.style.background = "#ffffff";
     playlist.style.background = "#ffffff";
     adver.style.background = "#ffffff";
+    song.style.background = "#ffffff";
   };
 
   album.onclick = function () {
@@ -224,6 +225,7 @@
     home.style.background = "#ffffff";
     playlist.style.background = "#ffffff";
     adver.style.background = "#ffffff";
+    song.style.background = "#ffffff";
   };
 
   playlist.onclick = function () {
@@ -233,6 +235,7 @@
     home.style.background = "#ffffff";
     album.style.background = "#ffffff";
     adver.style.background = "#ffffff";
+    song.style.background = "#ffffff";
   };
   
   adver.onclick = function () {
@@ -242,7 +245,20 @@
     home.style.background = "#ffffff";
     album.style.background = "#ffffff";
     playlist.style.background = "#ffffff";
+    song.style.background = "#ffffff";
   };
+
+  song.onclick = function () {
+    song.style.background = "#E6E6FA";
+    topic.style.background = "#ffffff";
+    cate.style.background = "#ffffff";
+    home.style.background = "#ffffff";
+    album.style.background = "#ffffff";
+    playlist.style.background = "#ffffff";
+    adver.style.background = "#ffffff";
+  };
+
+
 </script>
 </html>
 
