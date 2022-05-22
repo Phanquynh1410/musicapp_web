@@ -40,9 +40,13 @@
                             <p class="text-secondary mb-0 text-center" ></p>
                         <!-- </div> -->
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        <a href="{{ route('topic.edit', $value->id_chude) }}"><span class="badge badge-sm bg-gradient-primary" style="margin-right: 10px;">Edit</span></a>
-                        <a href=""><span class="badge badge-sm bg-gradient-danger ">Delete</span></a>
+                      <td class="align-middle text-center text-sm" >
+                          <a href="{{ route('topic.edit', $value->id_chude) }}"><span class="badge badge-sm bg-gradient-primary" style="margin-bottom: 10px;">Edit</span></a>
+                          <form action="{{ route('topic.destroy',$value->id_chude) }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                         <button class="badge badge-sm bg-gradient-danger" type="submit" style="border:none;"> Delete</button>
+                        </form>
                       </td>
                     </tr>
                     @endforeach

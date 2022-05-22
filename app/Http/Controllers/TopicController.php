@@ -18,11 +18,10 @@ class TopicController extends Controller
     //     return view('pages.topic.topic_edit',compact("topic"));
     // }
 
-    // public function destroy($id)
-    // {
-    //     $topic = Topic::findOrFail($id);
-    //     $topic->delete();
-
-    //     return redirect('/index')->with('success', 'Show is successfully deleted');
-    // }
+    public function destroy($topic)
+    {
+        $topic = Topic::findOrFail($topic);
+        $topic->delete();   
+        return redirect()->route('topic.index')->with('success', 'Show is successfully deleted');
+    }
 }
