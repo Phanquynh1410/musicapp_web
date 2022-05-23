@@ -24,4 +24,9 @@ class TopicController extends Controller
         $topic->delete();   
         return redirect()->route('topic.index')->with('success', 'Show is successfully deleted');
     }
+
+    public function create()
+    {
+        return view('pages.topic.topic_create');
+    }
 }

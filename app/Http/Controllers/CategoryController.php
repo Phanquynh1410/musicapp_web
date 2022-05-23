@@ -13,5 +13,10 @@ class CategoryController extends Controller
         return view('pages.cate.cate_list',compact("cate"));
     }
 
-
+    public function destroy($cate)
+    {
+        $cate = Category::findOrFail($cate);
+        $cate->delete();   
+        return redirect()->route('cate.index')->with('success', 'Show is successfully deleted');
+    }
 }
