@@ -38,10 +38,14 @@
                       <td class=" text-center">
                             <p class="text-secondary mb-0 text-center" >{{  $value->ten_casi }}</p>
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        <a href=""><span class="badge badge-sm bg-gradient-primary" style="margin-right: 10px;width: 60px;">Edit</span></a>
-                        <a href=""><span class="badge badge-sm bg-gradient-danger " style="margin-right: 10px;width: 60px;" >Delete</span></a>
-                        <a href=""><span class="badge badge-sm bg-gradient-info " style="width: 60px;">Detail</span></a>
+                      <td class="align-middle text-center text-sm col-md-2">
+                        <a href=""><span class="badge badge-sm bg-gradient-primary" style="margin-bottom: 10px;width: 60px;">Edit</span></a>
+                        <form action="{{ route('song.destroy',$value->id_baihat) }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                         <button class="badge badge-sm bg-gradient-danger" type="submit" style="border:none;"> Delete</button>
+                        </form>
+                        <a href=""><span class="badge badge-sm bg-gradient-info " style="width: 60px; margin-top: 10px;">Detail</span></a>
                       </td>
                     </tr>
                     @endforeach

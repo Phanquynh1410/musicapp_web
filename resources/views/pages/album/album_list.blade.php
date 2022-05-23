@@ -46,7 +46,7 @@
                           </div>
                         </div>
                       </td>
-                      <td class="align-middle text-center text-sm">
+                      <td class="align-middle text-center text-sm col-md-2">
                         <a href=""><span class="badge badge-sm bg-gradient-primary" style="margin-bottom: 10px;">Edit</span></a>
                         <form action="{{ route('album.destroy',$value->id_album) }}" method="POST">
                           @csrf

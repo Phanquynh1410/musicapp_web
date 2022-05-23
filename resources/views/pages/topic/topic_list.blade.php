@@ -41,11 +41,11 @@
                         <!-- </div> -->
                       </td>
                       <td class="align-middle text-center text-sm" >
-                          <a href="{{ route('topic.edit', $value->id_chude) }}"><span class="badge badge-sm bg-gradient-primary" style="margin-bottom: 10px;">Edit</span></a>
+                          <a href="{{ route('topic.edit', $value->id_chude) }}" class="badge badge-sm bg-gradient-primary" style="margin-bottom: 10px;">Edit</a>
                           <form action="{{ route('topic.destroy',$value->id_chude) }}" method="POST">
                           @csrf
                           @method('DELETE')
-                         <button class="badge badge-sm bg-gradient-danger" type="submit" style="border:none;"> Delete</button>
+                         <a class="badge badge-sm bg-gradient-danger" type="submit" > Delete</a>
                         </form>
                       </td>
                     </tr>

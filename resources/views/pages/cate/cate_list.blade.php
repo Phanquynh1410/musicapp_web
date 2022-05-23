@@ -42,7 +42,7 @@
                             <p class="text-secondary mb-0 text-center" >{{ $value->topic->ten_chude }}</p>
                         <!-- </div> -->
                       </td>
-                      <td class="align-middle text-center text-sm">
+                      <td class="align-middle text-center text-sm col-md-2">
                         <a href="{{ route('topic.edit', $value->id_chude) }}" ><span style="margin-bottom: 10px;" class="badge badge-sm bg-gradient-primary" style="margin-right: 10px;">Edit</span></a>
                         <form action="{{ route('cate.destroy',$value->id_theloai) }}" method="POST">
                           @csrf
