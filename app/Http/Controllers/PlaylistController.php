@@ -12,4 +12,11 @@ class PlaylistController extends Controller
         $playlist = $playlist::orderBy('id_playlist', 'DESC')->get();
         return view('pages.playlist.playlist_list',compact("playlist"));
     }
+
+    public function destroy($playlist)
+    {
+        $playlist = Playlist::findOrFail($playlist);
+        $playlist->delete();   
+        return redirect()->route('playlist.index')->with('success', 'Show is successfully deleted');
+    }
 }

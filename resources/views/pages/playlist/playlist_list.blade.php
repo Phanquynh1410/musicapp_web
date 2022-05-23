@@ -47,8 +47,12 @@
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <a href=""><span class="badge badge-sm bg-gradient-primary" style="margin-right: 10px;">Edit</span></a>
-                        <a href=""><span class="badge badge-sm bg-gradient-danger ">Delete</span></a>
+                        <a href=""><span class="badge badge-sm bg-gradient-primary" style="margin-bottom: 10px;">Edit</span></a>
+                        <form action="{{ route('playlist.destroy',$value->id_playlist) }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                         <button class="badge badge-sm bg-gradient-danger" type="submit" style="border:none;"> Delete</button>
+                        </form>
                       </td>
                     </tr>
                     @endforeach
