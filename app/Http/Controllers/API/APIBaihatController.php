@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Controllers\API;
+
+use App\Http\Controllers\Controller;
+use App\Model\Song;
+use Illuminate\Http\Request;
+
+class APIBaihatController extends Controller
+{
+    function search($name)
+    {
+        $result = Song::where('ten_baihat', 'LIKE', '%'. $name. '%')->get();
+        if(count($result)){
+         return Response()->json($result);
+        }
+        else
+        {
+        return response()->json(['Result' => 'No Data not found'], 404);
+      }
+    }
+}
