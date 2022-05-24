@@ -36,6 +36,7 @@ class TopicController extends Controller
         $request->validate([
             'name' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'id_topic' => 'require'
         ]);
        
         $imageName = time().'.'.$request->image->extension();  
@@ -43,7 +44,8 @@ class TopicController extends Controller
         
         $data = [
             'ten_chude' => $request->name,
-            'hinh_chude' => "http://127.0.0.1:8000/images/". $imageName
+            'hinh_chude' => "http://127.0.0.1:8000/images/topic". $imageName,
+            ''
         ];
         // dd($data);
         Topic::create($data);

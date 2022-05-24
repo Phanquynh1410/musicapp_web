@@ -8,7 +8,7 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Topic List</h6>
-              <a href="{{ route('topic.create') }}"><span class="badge badge-sm bg-gradient-success" style="margin-right: 10px; float: right; word-wrap: normal;">Add Topic</span></a>
+              <a href="{{ route('cate.create') }}"><span class="badge badge-sm bg-gradient-success" style="margin-right: 10px; float: right; word-wrap: normal;">Add Category</span></a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -44,17 +44,13 @@
                       </td>
                       <td class="align-middle text-center text-sm col-md-2">
                         <a href="{{ route('topic.edit', $value->id_chude) }}" ><span style="margin-bottom: 10px;" class="badge badge-sm bg-gradient-primary" style="margin-right: 10px;">Edit</span></a>
-                        <form action="{{ route('cate.destroy',$value->id_theloai) }}" method="POST">
-                          @csrf
-                          @method('DELETE')
-                         <button class="badge badge-sm bg-gradient-danger" type="submit" style="border:none;"> Delete</button>
-                        </form>
+                        <a class="badge badge-sm bg-gradient-danger" href="{{ route('cate.destroy',$value->id_theloai) }}" > Delete</a>
                       </td>
                     </tr>
                     @endforeach
                   </tbody>
-
                 </table>
+                <div class="pull-right">{{ $cate->links() }}</div>
               </div>
             </div>
           </div>
