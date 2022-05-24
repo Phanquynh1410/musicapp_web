@@ -29,24 +29,23 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        
-    //     $request->validate([
-    //         'name' => 'required',
-    //         'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-    //         'id_topic' => 'required'
-    //     ]);
+        $request->validate([
+            'name' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'id_topic' => 'required' 
+        ]);
        
-    //     $imageName = time().'.'.$request->image->extension();  
-    //     $request->image->move(public_path('images'), $imageName);
+        $imageName = time().'.'.$request->image->extension();  
+        $request->image->move(public_path('images\cate'), $imageName);
         
-    //     $data = [
-    //         'ten_theloai' => $request->name,
-    //         'hinh_theloai' => "http://127.0.0.1:8000/images/cate". $imageName,
-    //         'id_chude' => $request->id_topic,
-    //     ]; 
-    //     // dd($data);
-    //     Category::create($data);
+        $data = [
+            'ten_theloai' => $request->name,
+            'hinh_theloai' => "http://127.0.0.1:8000/images/topic". $imageName,
+            'id_chude' => $request->id_topic
+        ];
+        // dd($data);
+        Category::create($data);
    
-    //     return redirect()->route('cate.index')->with('success','Product created successfully.');
+        return redirect()->route('topic.index')->with('success','Product created successfully.');
     }
 }

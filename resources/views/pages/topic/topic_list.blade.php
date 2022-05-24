@@ -30,7 +30,7 @@
                       {{ $key+1 }}
                       </td>
                       <td class="text-center">
-                            <img src="{{ $value->hinh_chude }}" class="" alt="user1" style="width: 200px; height: 100px;" >
+                            <img src="http://127.0.0.1:8000/images/topic/{{ $value->hinh_chude }}" class="" alt="user1" style="width: 200px; height: 100px;" >
                       </td>
                       <td class="text-center">
                       {{  $value->ten_chude }}
