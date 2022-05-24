@@ -48,8 +48,8 @@
                     </tr>
                     @endforeach
                   </tbody>
-
                 </table>
+                <div class="pull-right" style="margin: 20px;">{{ $topic->links() }}</div>
               </div>
             </div>
           </div>

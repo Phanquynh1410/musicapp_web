@@ -9,7 +9,7 @@ class TopicController extends Controller
 {
     public function index(Topic $topic)
     {
-        $topic = $topic::orderBy('id_chude', 'DESC')->get();
+        $topic = $topic::orderBy('id_chude', 'DESC')->paginate(4);
         return view('pages.topic.topic_list',compact("topic"));
     }
 
