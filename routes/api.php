@@ -45,3 +45,6 @@ Route::get('getalbum/{id}', [APIAlbumController::class, 'getalbum']);
 
 //search baihat
 Route::get('search/{name}', [APIBaihatController::class, 'search']);
+
+//api show nhac
+Route::get('baihat', [APIBaihatController::class, 'getsong']);

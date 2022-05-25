@@ -19,4 +19,10 @@ class APIBaihatController extends Controller
         return response()->json(['Result' => 'No Data not found'], 404);
       }
     }
+
+    public function getsong(Song $song)
+    {
+        $BH = $song::select('ten_baihat','hinh_baihat','link_baihat')->get();
+        return response()->json($BH);
+    }
 }
