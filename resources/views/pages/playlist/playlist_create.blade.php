@@ -7,7 +7,7 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Add new Album</h6>
+              <h6>Add new Playlist</h6>
               <div class="pull-right">
                   <a class="badge badge-sm bg-gradient-primary" href="{{ route('album.index') }}" style="padding: 10px;">Back</a>
                 </div>
@@ -26,25 +26,23 @@
                       </div>
                   @endif
                     
-                  <form action="{{ route('album.store') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('playlist.store') }}" method="POST" enctype="multipart/form-data">
                       @csrf
                       <div class="row">
                           <div class="col-xs-12 col-sm-12 col-md-12">
                               <div class="form-group">
-                                  <strong>Album Name:</strong>
-                                  <input type="text" name="name"  class="form-control" placeholder="Album Name">
+                                  <strong>Playlist Name:</strong>
+                                  <input type="text" name="name"  class="form-control" placeholder="Playlist Name">
                               </div>
                           </div>
                           <div class="col-xs-12 col-sm-12 col-md-12" >
-                            <strong>Album Image:</strong>
-                            <input type="file" name="image" class="form-control">
+                            <strong>Playlist background:</strong>
+                            <input type="file" name="imagebg" class="form-control">
                           </div>
 
                           <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 20px;">
-                              <div class="form-group">
-                                  <strong>Singer Name:</strong>
-                                  <input type="text" name="singer"  class="form-control" placeholder="Album Name">
-                              </div>
+                            <strong>Playlist icon:</strong>
+                            <input type="file" name="imageicon" class="form-control">
                           </div>
 
                           <div class="col-xs-12 col-sm-12 col-md-12 text-center" style="margin-top: 20px;">
@@ -171,9 +169,9 @@
 
 <script>
  
-  var cate = document.getElementById("cate");
+  var playlist = document.getElementById("playlist");
   
-  cate.style.background = "#E6E6FA";
+  playlist.style.background = "#E6E6FA";
 </script>
 
 </html>
