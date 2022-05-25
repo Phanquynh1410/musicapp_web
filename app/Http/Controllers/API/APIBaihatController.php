@@ -23,6 +23,8 @@ class APIBaihatController extends Controller
     public function getsong(Song $song)
     {
         $BH = $song::select('ten_baihat','hinh_baihat','link_baihat')->get();
-        return response()->json($BH);
+        return response()->json([
+            'list' => $BH
+        ]);
     }
 }

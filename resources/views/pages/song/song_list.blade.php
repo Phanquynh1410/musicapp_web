@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -7,8 +8,8 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Topic List</h6>
-              <a href="{{ route('topic.create') }}"><span class="badge badge-sm bg-gradient-success" style="margin-right: 10px; float: right; word-wrap: normal;">Add Topic</span></a>
+              <h6>Song List</h6>
+              <a href="{{ route('song.create') }}"><span class="badge badge-sm bg-gradient-success" style="margin-right: 10px; float: right; word-wrap: normal;">Add Song</span></a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -30,7 +31,7 @@
                        <p class="text-secondary mb-0" >{{ $key+1 }}</p>
                       </td>
                       <td class="text-center">
-                            <img src="{{ $value->hinh_baihat }}" class="" alt="user1" style="width: 100px; height: 100px;" >
+                            <img src="  images/song/{{ $value->hinh_baihat }}" class="" alt="user1" style="width: 100px; height: 100px;" >
                       </td>
                       <td class=" text-center">
                             <p class="text-secondary mb-0 text-center" >{{  $value->ten_baihat }}</p>
@@ -50,8 +51,8 @@
                     </tr>
                     @endforeach
                   </tbody>
-
                 </table>
+                <div class="pull-right" style="margin: 20px;">{{ $song->links() }}</div>
               </div>
             </div>
           </div>

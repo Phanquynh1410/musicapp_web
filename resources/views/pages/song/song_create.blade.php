@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -7,15 +8,15 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Add new advertisement</h6>
+              <h6>Add new song</h6>
               <div class="pull-right">
-                  <a class="badge badge-sm bg-gradient-primary" href="{{ route('adver.index') }}" style="padding: 10px;">Back</a>
+                  <a class="badge badge-sm bg-gradient-primary" href="{{ route('song.index') }}" style="padding: 10px;"> Back</a>
                 </div>
             </div>
 
               <div style="margin: 30px;">
                
-                  @if ($errors->any())
+                  <!-- @if ($errors->any())
                       <div class="alert alert-danger">
                           <strong>Whoops!</strong> There were some problems with your input.<br><br>
                           <ul>
@@ -24,30 +25,55 @@
                               @endforeach
                           </ul>
                       </div>
-                  @endif
+                  @endif -->
                     
-                  <form action="{{ route('adver.store') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('song.store') }}" method="POST" enctype="multipart/form-data">
                       @csrf
                       <div class="row">
-                         
+                          <div class="col-xs-12 col-sm-12 col-md-12">
+                              <div class="form-group">
+                                  <strong>Song Name:</strong>
+                                  <input type="text" name="name"  class="form-control" placeholder="Song Name">
+                              </div>
+                          </div>
                           <div class="col-xs-12 col-sm-12 col-md-12" >
-                            <strong>Advertisement Image:</strong>
+                            <strong>Song Image:</strong>
                             <input type="file" name="image" class="form-control">
+                          </div>
+
+                          <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 20px;" >
+                            <strong>Songs:</strong>
+                            <input type="file" name="song" class="form-control">
                           </div>
 
                           <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 20px;">
                               <div class="form-group">
-                                  <strong>Content:</strong>
-                                  <textarea type="text" name="content"  class="form-control" placeholder="conent"></textarea>``
+                                  <strong>Album Name:</strong>
+                                  <select class="form-control cateProduct" name="album">
+                                    @foreach ($album as $album)
+                                        <option value="{{$album->id_album}}">{{$album->ten_album}}</option>
+                                    @endforeach
+                                  </select>
+                              </div>
+                          </div>
+
+                          <div class="col-xs-12 col-sm-12 col-md-12" >
+                              <div class="form-group">
+                                  <strong>Category Name:</strong>
+                                  <select class="form-control cateProduct" name="cate">
+                                    @foreach ($cate as $cate)
+                                        <option value="{{$cate->id_theloai}}">{{$cate->ten_theloai}}</option>
+                                    @endforeach
+                                  </select>
                               </div>
                           </div>
 
                           <div class="col-xs-12 col-sm-12 col-md-12">
                               <div class="form-group">
-                                  <strong>Song Name:</strong>
-                                  <select class="form-control " name="id_song">
-                                    @foreach ($song as $song)
-                                        <option value="{{$song->id_baihat}}">{{$song->ten_baihat}}</option>
+                                  <strong>Playlist Name:</strong>
+                                  <select class="form-control cateProduct" name="playlist">
+                                    @foreach ($playlist as $playlist)
+                                        <option value="{{$playlist->id_playlist}}">{{$playlist->ten_playlist}}</option>
                                     @endforeach
                                   </select>
                               </div>
@@ -57,7 +83,6 @@
                             <button type="submit" class="badge badge-sm bg-gradient-success" style="padding: 10px; outline: none !important;">Submit</button>
                           </div>
                       </div>
-                      
                   </form>
                </div>
 
@@ -177,9 +202,9 @@
 
 <script>
  
-  var cate = document.getElementById("cate");
+  var song = document.getElementById("song");
   
-  cate.style.background = "#E6E6FA";
+  song.style.background = "#E6E6FA";
 </script>
 
 </html>
