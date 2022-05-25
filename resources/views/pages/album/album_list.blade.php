@@ -8,7 +8,7 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Topic List</h6>
-              <a href="{{ route('topic.create') }}"><span class="badge badge-sm bg-gradient-success" style="margin-right: 10px; float: right; word-wrap: normal;">Add Topic</span></a>
+              <a href="{{ route('album.create') }}"><span class="badge badge-sm bg-gradient-success" style="margin-right: 10px; float: right; word-wrap: normal;">Add ALbum</span></a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -31,7 +31,7 @@
                        <p class="text-secondary mb-0" >{{ $key+1 }}</p>
                       </td>
                       <td class="text-center">
-                            <img src="{{ $value->hinh_album }}" class="" alt="user1" style="width: 100px; height: 100px;" >
+                            <img src="http://127.0.0.1:8000/images/album/{{ $value->hinh_album }}" class="" alt="user1" style="width: 100px; height: 100px;" >
                       </td>
                       <td class=" text-center">
                             <p class="text-secondary mb-0 text-center" >{{  $value->ten_album }}</p>
@@ -48,17 +48,13 @@
                       </td>
                       <td class="align-middle text-center text-sm col-md-2">
                         <a href=""><span class="badge badge-sm bg-gradient-primary" style="margin-bottom: 10px;">Edit</span></a>
-                        <form action="{{ route('album.destroy',$value->id_album) }}" method="POST">
-                          @csrf
-                          @method('DELETE')
-                         <button class="badge badge-sm bg-gradient-danger" type="submit" style="border:none;"> Delete</button>
-                        </form>
+                        <a class="badge badge-sm bg-gradient-danger" href="{{ route('album.destroy',$value->id_album) }}" > Delete</a>
                       </td>
                     </tr>
                     @endforeach
                   </tbody>
-
                 </table>
+                <div class="pull-right" style="margin: 20px;">{{ $album->links() }}</div>
               </div>
             </div>
           </div>
