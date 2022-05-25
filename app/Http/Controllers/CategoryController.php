@@ -42,7 +42,7 @@ class CategoryController extends Controller
             'hinh_theloai' => $imageName,
             'id_chude' => $request->id_topic
         ];
-
+        
         Category::create($data);
         return redirect()->route('cate.index');
     }

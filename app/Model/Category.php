@@ -8,7 +8,7 @@ use App\Model\Topic;
 class Category extends Model
 {
     protected $table = 'theloai';
-    protected $fillable = ['*'];
+    protected $fillable = ['id_theloai','id_chude','ten_theloai','hinh_theloai'];
 
     protected $primaryKey = 'id_theloai';
 

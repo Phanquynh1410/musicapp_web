@@ -30,7 +30,7 @@
                         {{ $key+1 }}
                       </td>
                       <td class="text-center">
-                       <img src="{{ $value->hinh_theloai}}" class="" alt="user1" style="width: 100px; height: 100px;" >
+                       <img src="http://127.0.0.1:8000/images/cate/{{$value->hinh_theloai}}" class="" alt="user1" style="width: 100px; height: 100px;" >
                       </td>
                       <td class=" text-center">
                         <!-- <div class="d-flex px-2 py-1" > -->
@@ -50,7 +50,7 @@
                     @endforeach
                   </tbody>
                 </table>
-                <div class="pull-right">{{ $cate->links() }}</div>
+                <div class="pull-right"  style="margin: 20px;">{{ $cate->links() }}</div>
               </div>
             </div>
           </div>
