@@ -29,7 +29,7 @@
                        <p class="text-secondary mb-0" >{{ $key+1 }}</p>
                       </td>
                       <td class="text-center">
-                            <img src="http://127.0.0.1:8000/images/adver/{{$value->hinh_quangcao }}" class="" alt="user1" style="width: 100px; height: 100px;" >
+                            <img src="images/adver/{{$value->hinh_quangcao }}" class="" alt="user1" style="width: 100px; height: 100px;" >
                       </td>
                       <td class=" text-center">
                       <p class="text-secondary mb-0 text-center" >{{ $value->song->ten_baihat }}</p>
