@@ -36,8 +36,12 @@
                       </td>
                       <td class="align-middle text-center text-sm " >
                         <a href=""><span class="badge badge-sm bg-gradient-primary text-center" style="width: 60px; margin-bottom: 10px;">Edit</span></a>
-                        <a class="badge badge-sm bg-gradient-danger" href="{{ route('adver.destroy',$value->id_quangcao) }}" > Delete</a>
-                        <a href=""><span class="badge badge-sm bg-gradient-info " style="width: 60px;margin-top: 10px;">Detail</span></a>
+                        <form action="{{ route('adver.destroy',$value->id_quangcao) }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                         <button class="badge badge-sm bg-gradient-danger" type="submit" style="border:none;"> Delete</button>
+                        </form>
+                        <a href="{{ route('adver.show',$value->id_quangcao) }}"><span class="badge badge-sm bg-gradient-info " style="width: 60px;margin-top: 10px;">Detail</span></a>
                       </td>
                     </tr>
                     @endforeach

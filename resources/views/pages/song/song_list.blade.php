@@ -46,7 +46,7 @@
                           @method('DELETE')
                          <button class="badge badge-sm bg-gradient-danger" type="submit" style="border:none;"> Delete</button>
                         </form>
-                        <a href=""><span class="badge badge-sm bg-gradient-info " style="width: 60px; margin-top: 10px;">Detail</span></a>
+                        <a href="{{ route('song.show',$value->id_baihat) }}"><span class="badge badge-sm bg-gradient-info " style="width: 60px; margin-top: 10px;">Detail</span></a>
                       </td>
                     </tr>
                     @endforeach

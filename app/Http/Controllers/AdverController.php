@@ -14,7 +14,7 @@ class AdverController extends Controller
         return view('pages.adver.adver_list',compact("adver"));
     }
 
-    public function show($adver)
+    public function destroy($adver)
     {
         $adver = Adver::findOrFail($adver);
         $adver->delete();   
@@ -45,5 +45,11 @@ class AdverController extends Controller
         
         Adver::create($data);
         return redirect()->route('adver.index');
+    }
+
+    public function show(Adver $adver)
+    {
+        $song = Song::get();
+        return view('pages.adver.adver_detail',compact('adver','song'));
     }
 }

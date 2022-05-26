@@ -63,4 +63,12 @@ class SongController extends Controller
    
         return redirect()->route('song.index');
     }
+
+    public function show(Song $song)
+    {
+        $album = Album::get();
+        $cate = Category::get();
+        $playlist = Playlist::get();
+        return view('pages.song.song_detail',compact('song','album', 'cate', 'playlist'));
+    }
 }
