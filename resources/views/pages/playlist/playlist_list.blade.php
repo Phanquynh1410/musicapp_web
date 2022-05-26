@@ -7,7 +7,7 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Topic List</h6>
+              <h6>Playlist List</h6>
               <a href="{{ route('playlist.create') }}"><span class="badge badge-sm bg-gradient-success" style="margin-right: 10px; float: right; word-wrap: normal;">Add Playlist</span></a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">

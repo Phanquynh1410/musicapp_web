@@ -40,6 +40,7 @@ class SongController extends Controller
             'cate' => 'required',
             'playlist' => 'required',
             'song' => 'required|mimes:application/octet-stream,audio/mpeg,mpga,mp3,wav',
+            'singer' => 'required'
         ]);
        
         $imageName = time().'.'.$request->image->extension();  
@@ -55,7 +56,8 @@ class SongController extends Controller
             'link_baihat' => $songName,
             'id_album' => $request->album,
             'id_theloai' => $request->cate,
-            'id_playlist' => $request->playlist
+            'id_playlist' => $request->playlist,
+            'ten_casi' => $request->singer
         ];
         Song::create($data);
    

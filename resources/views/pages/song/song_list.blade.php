@@ -31,7 +31,7 @@
                        <p class="text-secondary mb-0" >{{ $key+1 }}</p>
                       </td>
                       <td class="text-center">
-                            <img src="  images/song/{{ $value->hinh_baihat }}" class="" alt="user1" style="width: 100px; height: 100px;" >
+                            <img src="images/song/{{ $value->hinh_baihat }}" class="" alt="user1" style="width: 100px; height: 100px;" >
                       </td>
                       <td class=" text-center">
                             <p class="text-secondary mb-0 text-center" >{{  $value->ten_baihat }}</p>

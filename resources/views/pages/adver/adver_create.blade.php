@@ -38,7 +38,7 @@
                           <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 20px;">
                               <div class="form-group">
                                   <strong>Content:</strong>
-                                  <textarea type="text" name="content"  class="form-control" placeholder="conent"></textarea>``
+                                  <textarea type="text" name="content" class="form-control" placeholder="content"></textarea>
                               </div>
                           </div>
 
@@ -52,6 +52,7 @@
                                   </select>
                               </div>
                           </div>
+                          
 
                           <div class="col-xs-12 col-sm-12 col-md-12 text-center" style="margin-top: 20px;">
                             <button type="submit" class="badge badge-sm bg-gradient-success" style="padding: 10px; outline: none !important;">Submit</button>
@@ -177,9 +178,9 @@
 
 <script>
  
-  var cate = document.getElementById("cate");
+  var adver = document.getElementById("adver");
   
-  cate.style.background = "#E6E6FA";
+  adver.style.background = "#E6E6FA";
 </script>
 
 </html>

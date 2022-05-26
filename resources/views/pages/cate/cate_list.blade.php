@@ -7,7 +7,7 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Topic List</h6>
+              <h6>Category List</h6>
               <a href="{{ route('cate.create') }}"><span class="badge badge-sm bg-gradient-success" style="margin-right: 10px; float: right; word-wrap: normal;">Add Category</span></a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
@@ -30,7 +30,7 @@
                         {{ $key+1 }}
                       </td>
                       <td class="text-center">
-                       <img src="http://127.0.0.1:8000/images/cate/{{$value->hinh_theloai}}" class="" alt="user1" style="width: 100px; height: 100px;" >
+                       <img src="images/cate/{{$value->hinh_theloai}}" class="" alt="user1" style="width: 100px; height: 100px;" >
                       </td>
                       <td class=" text-center">
                         <!-- <div class="d-flex px-2 py-1" > -->

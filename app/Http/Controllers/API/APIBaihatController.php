@@ -23,8 +23,9 @@ class APIBaihatController extends Controller
     public function getsong(Song $song)
     {
         $BH = $song::select('ten_baihat','hinh_baihat','link_baihat')->get();
-        return response()->json([
-            'list' => $BH
-        ]);
+        foreach($BH as $key => $value){
+            $list[]['list'] = $value;
+        }
+        return response()->json(['list' => $list]);
     }
 }

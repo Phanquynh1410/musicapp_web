@@ -43,7 +43,7 @@
                           <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 20px;">
                               <div class="form-group">
                                   <strong>Singer Name:</strong>
-                                  <input type="text" name="singer"  class="form-control" placeholder="Album Name">
+                                  <input type="text" name="singer"  class="form-control" placeholder="Singer Name">
                               </div>
                           </div>
 
@@ -171,9 +171,9 @@
 
 <script>
  
-  var cate = document.getElementById("cate");
+  var album = document.getElementById("album");
   
-  cate.style.background = "#E6E6FA";
+  album.style.background = "#E6E6FA";
 </script>
 
 </html>

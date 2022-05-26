@@ -9,7 +9,7 @@
             <div class="card-header pb-0">
               <h6>Add new Playlist</h6>
               <div class="pull-right">
-                  <a class="badge badge-sm bg-gradient-primary" href="{{ route('album.index') }}" style="padding: 10px;">Back</a>
+                  <a class="badge badge-sm bg-gradient-primary" href="{{ route('playlist.index') }}" style="padding: 10px;">Back</a>
                 </div>
             </div>
 

@@ -48,6 +48,13 @@
 
                           <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 20px;">
                               <div class="form-group">
+                                  <strong>Singer Name:</strong>
+                                  <input type="text" name="singer"  class="form-control" placeholder="Singer Name">
+                              </div>
+                          </div>
+
+                          <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 10px;">
+                              <div class="form-group">
                                   <strong>Album Name:</strong>
                                   <select class="form-control cateProduct" name="album">
                                     @foreach ($album as $album)
