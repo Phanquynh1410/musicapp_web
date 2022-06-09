@@ -11,6 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+use App\Http\Controllers\TopicController;
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::resource('topic','TopicController');
+Route::resource('cate','CategoryController');
+Route::resource('album','AlbumController');
+Route::resource('playlist','PlaylistController');
+Route::resource('adver','AdverController');
+Route::resource('song','SongController');
