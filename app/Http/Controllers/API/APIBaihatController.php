@@ -10,7 +10,9 @@ class APIBaihatController extends Controller
 {
     function search($name)
     {
-        $result = Song::where('ten_baihat', 'LIKE', '%'. $name. '%')->get();
+        $result1 = Song::where('ten_baihat' , 'LIKE', '%'. $name. '%')->get();
+        $result2 = Song::where('ten_casi' , 'LIKE', '%'. $name. '%')->get();
+        $result = $result1->merge($result2);
         if(count($result)){
          return Response()->json($result);
         }
