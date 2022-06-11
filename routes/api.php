@@ -36,6 +36,9 @@ Route::get('alldata_playlist', [APIPlaylistController::class, 'show']);
 Route::get('alldata_chude', [APIChudeController::class, 'show']);
 Route::get('alldata_album', [APIAlbumController::class, 'show']);
 
+//api detail bai hat theo danh sach 
+Route::get('detail_pl_bh', [APIPlaylistController::class, 'detail']);
+
 //api get baihat theo id 
 Route::get('getquangcao/{id}', [APIQuangcaoController::class, 'getquangcao']);
 Route::get('getplaylist/{id}', [APIPlaylistController::class, 'getplaylist']);
