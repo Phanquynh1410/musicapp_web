@@ -135,20 +135,22 @@
    
   </aside>
 
-        <main  class="main-content position-relative border-radius-lg ">
-
+        <main  class="main-content position-relative border-radius-lg " >
+        
         <nav class="navbar navbar-expand-md ">
             <div class="container">
+             <form action="{{url('search')}}" type ="get">
+              <input type="text" name="query" style="float: left; border-radius: 5px; border: 1px; margin-top: 20px;">
+                <button type="submit" class="btn btn-outlight-light" style="margin-left: 10px; background-color: #ffa15e; color: #ffffff; border-radius: 5px; border-color: #98a6eb; outline: none; margin-top: 15px;">Search</button>
+             </form>
                 <a class="navbar-brand" href="{{ url('/') }}">
-                   
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left:720px">
-                   
-                    <ul class="navbar-nav mr-auto">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 400px;">
+                    <ul class="navbar-nav mr-auto" >
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -160,13 +162,13 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item" >
-                                <a style="color: #ffffff;" id="navbarDropdown" class="nav-link " href="#" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <li class="nav-item">
+                                <a style="color: #ffffff; padding-top: 20px;" id="navbarDropdown" class="nav-link " href="#" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre >
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                             </li>
                             <li>
-                            <div style="text-align: right; margin-top: 5px; margin-left: 20px;">
+                            <div style="text-align: right; margin-top: 5px; padding-top: 10px; margin-left: 20px;">
                                    <button class="btn btn-danger"> <a style="color: #ffffff;" class="" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

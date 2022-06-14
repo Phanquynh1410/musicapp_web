@@ -46,4 +46,31 @@ class CategoryController extends Controller
         Category::create($data);
         return redirect()->route('cate.index');
     }
+
+    public function edit($id)
+    {
+        $cate = Category::findOrFail($id);
+        $topic = Topic::get();
+        return view('pages.cate.cate_edit',compact("cate","topic"));
+    }
+
+    public function update(Request $request, $id_theloai){
+        // dd($id_chude);
+        $request->validate([
+            'name' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'id_topic' => 'required' 
+        ]);
+        $imageName = time().'.'.$request->image->extension();  
+        $request->image->move(public_path('images\cate'), $imageName);
+        
+        $data = [
+            'ten_theloai' => $request->name,
+            'hinh_theloai' => $imageName,
+            'id_chude' => $request->id_topic
+        ];
+        $cate = Category::findOrFail($id_theloai)->update($data);
+
+        return redirect()->route('cate.index');
+    }
 }

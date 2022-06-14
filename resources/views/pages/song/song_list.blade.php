@@ -8,8 +8,8 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Song List</h6>
-              <a href="{{ route('song.create') }}"><span class="badge badge-sm bg-gradient-success" style="margin-right: 10px; float: right; word-wrap: normal;">Add Song</span></a>
+            <h6>Song List</h6>
+              <a href="{{ route('song.store') }}"><span class="badge badge-sm bg-gradient-success" style="margin-right: 10px; float: right; word-wrap: normal;">Add Song</span></a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -40,7 +40,7 @@
                             <p class="text-secondary mb-0 text-center" >{{  $value->ten_casi }}</p>
                       </td>
                       <td class="align-middle text-center text-sm col-md-2">
-                        <a href=""><span class="badge badge-sm bg-gradient-primary" style="margin-bottom: 10px;width: 60px;">Edit</span></a>
+                        <a href="{{ route('song.edit',$value->id_baihat) }}"><span class="badge badge-sm bg-gradient-primary" style="margin-bottom: 10px;width: 60px;">Edit</span></a>
                         <form action="{{ route('song.destroy',$value->id_baihat) }}" method="POST">
                           @csrf
                           @method('DELETE')

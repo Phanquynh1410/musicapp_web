@@ -15,6 +15,7 @@
 //     return view('welcome');
 // });
 
+use App\Http\Controllers\SongController;
 use App\Http\Controllers\TopicController;
 
 Auth::routes();
@@ -27,3 +28,6 @@ Route::resource('album','AlbumController');
 Route::resource('playlist','PlaylistController');
 Route::resource('adver','AdverController');
 Route::resource('song','SongController');
+
+//search baihat
+Route::get('search', [SongController::class, 'search']);

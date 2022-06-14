@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -7,8 +8,8 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Category List</h6>
-              <a href="{{ route('cate.create') }}"><span class="badge badge-sm bg-gradient-success" style="margin-right: 10px; float: right; word-wrap: normal;">Add Category</span></a>
+            <h6>Song List</h6>
+              <a href="{{ route('song.store') }}"><span class="badge badge-sm bg-gradient-success" style="margin-right: 10px; float: right; word-wrap: normal;">Add Song</span></a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -17,40 +18,41 @@
                   <thead>                 
                     <tr>
                       <th class="text-uppercase text-center text-secondary font-weight-bolder opacity-7">ID</th>
-                      <th class="text-uppercase text-center text-secondary font-weight-bolder opacity-7" >Category Image</th>
-                      <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-7">Category Name</th>
-                      <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-7">Topic Name</th>
+                      <th class="text-uppercase text-center text-secondary font-weight-bolder opacity-7" >Song Image </th>
+                      <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-7">Song Name</th>
+                      <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-7">Singer</th>
                       <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-7"></th>
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($cate as $key => $value)
+                  @foreach($song as $key => $value)
                     <tr>
                       <td class="text-center">
-                        {{ $key+1 }}
+                       <p class="text-secondary mb-0" >{{ $key+1 }}</p>
                       </td>
                       <td class="text-center">
-                       <img src="images/cate/{{$value->hinh_theloai}}" class="" alt="user1" style="width: 100px; height: 100px;" >
+                            <img src="images/song/{{ $value->hinh_baihat }}" class="" alt="user1" style="width: 100px; height: 100px;" >
                       </td>
                       <td class=" text-center">
-                        <!-- <div class="d-flex px-2 py-1" > -->
-                            <p class="text-secondary mb-0 text-center" >{{ $value->ten_theloai }}</p>
-                        <!-- </div> -->
+                            <p class="text-secondary mb-0 text-center" >{{  $value->ten_baihat }}</p>
                       </td>
                       <td class=" text-center">
-                        <!-- <div class="d-flex px-2 py-1" > -->
-                            <p class="text-secondary mb-0 text-center" >{{ $value->topic->ten_chude }}</p>
-                        <!-- </div> -->
+                            <p class="text-secondary mb-0 text-center" >{{  $value->ten_casi }}</p>
                       </td>
                       <td class="align-middle text-center text-sm col-md-2">
-                        <a href="{{ route('cate.edit', $value->id_theloai) }}" ><span style="margin-bottom: 10px;" class="badge badge-sm bg-gradient-primary" style="margin-right: 10px;">Edit</span></a>
-                        <a class="badge badge-sm bg-gradient-danger" href="{{ route('cate.destroy',$value->id_theloai) }}" > Delete</a>
+                        <a href="{{ route('song.edit',$value->id_baihat) }}"><span class="badge badge-sm bg-gradient-primary" style="margin-bottom: 10px;width: 60px;">Edit</span></a>
+                        <form action="{{ route('song.destroy',$value->id_baihat) }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                         <button class="badge badge-sm bg-gradient-danger" type="submit" style="border:none;"> Delete</button>
+                        </form>
+                        <a href="{{ route('song.show',$value->id_baihat) }}"><span class="badge badge-sm bg-gradient-info " style="width: 60px; margin-top: 10px;">Detail</span></a>
                       </td>
                     </tr>
                     @endforeach
                   </tbody>
                 </table>
-                <div class="pull-right"  style="margin: 20px;">{{ $cate->links() }}</div>
+                
               </div>
             </div>
           </div>
@@ -239,11 +241,10 @@
 
 
 <script>
-  var cate = document.getElementById("cate");
+ 
+  var song = document.getElementById("song");
   
-  home.style.background = "#ffffff";
-  topic.style.background = "#ffffff";
-  cate.style.background = "#E6E6FA";
+  song.style.background = "#E6E6FA";
 </script>
 
 </html>

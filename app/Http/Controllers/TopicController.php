@@ -50,4 +50,30 @@ class TopicController extends Controller
    
         return redirect()->route('topic.index')->with('success','Product created successfully.');
     }
+
+    public function edit($id)
+    {
+        $topic = Topic::findOrFail($id);
+        return view('pages.topic.topic_edit',compact("topic"));
+    }
+
+    public function update(Request $request, $id_chude){
+        // dd($id_chude);
+        $request->validate([
+            'name' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+       
+        $imageName = time().'.'.$request->image->extension();  
+        $request->image->move(public_path('images\topic'), $imageName);
+        
+        $data = [
+            'ten_chude' => $request->name,
+            'hinh_chude' => $imageName,
+        ];
+        
+        $topic = Topic::findOrFail($id_chude)->update($data);
+
+        return redirect()->route('topic.index');
+    }
 }
